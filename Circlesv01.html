@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Circles</title>
+        <style type="text/css">
+        #map {
+        height: 500px;
+        border: 1px;
+        border-style: solid;
+        }
+        .leftSide {
+        border: 1px;
+        border-style: solid;
+        }
+        .locationA {
+            color : red;
+        }
+        .locationB {
+            color : blue;
+        }.locationC {
+            color : green;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+        <!--<script src="js/getRates_2.js"></script>-->
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/circlesV01.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy1tnM2xnWcUdCYg4Qw3WWMjTdM-nTEpA"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="home" class ="locationA">Home</label>
+                            <input type="number" class="form-control" id="homeMiles" value="1.0">                            
+                            <div class="locationInputs" style="display:none">
+                                <input type="number" class="form-control" id="homeLat" value="36.307272">
+                                <input type="number" class="form-control" id="homeLng" value="-115.282843">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-3">
+                            <label for="elkhorn_durango" class ="locationB">Elkhorn &amp; Durango</label>
+                            <input type="number" class="form-control" id="aMiles" value="1.0">
+                                <div class="locationInputs" style="display:none">
+                                <input type="number" class="form-control" id="aLat" value="36.2916">
+                                <input type="number" class="form-control" id="aLng" value="-115.2878">
+                            </div>
+                        </div>
+                        <div class="col-sm-3"><label for="LAS" class ="locationC">LAS</label>
+                        <input type="number" class="form-control" id="bMiles" value="1.0">
+                        <div class="locationInputs" style="display:none">
+                            <input type="number" class="form-control" id="bLat" value="36.084282">
+                            <input type="number" class="form-control" id="bLng" value="-115.153739">
+                        </div>
+                    </div>
+                    <div class="col-sm-3"><button onclick="initMap(event)" type="submit" class="btn btn-default">Submit</button>
+                    <button type="button" class="btn btn-default btn-xs locationButton">Show Locations</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="map" class="col-md-10">Map Should Be Here
+    </div>
+</div>
+</div>
